@@ -6,7 +6,7 @@ import axios from 'axios';
 import Gallery from './components/Gallery';
 import Navbar from './components/Navbar';
 
-const API_KEY = process.env.REACT_APP_NASA_API_KEY;
+const API_KEY = 'tmbtWjmsukDyG3I7AvpcIeFfyg0hxnXK3XdjOs2A';
 
 function App() {
   const [images, setImages] = useState([]);
@@ -17,6 +17,7 @@ function App() {
   }, []);
 
   const fetchImages = async () => {
+    console.log(API_KEY)
     try {
       const response = await axios.get(
         `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=30`

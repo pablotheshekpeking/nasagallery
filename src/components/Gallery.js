@@ -5,7 +5,7 @@ import '../App.css';
 
 const Gallery = ({ images }) => {
   const openImage = (imageUrl) => {
-    window.open(imageUrl, '_blank'); // Open image URL in a new tab
+    window.open(imageUrl, '_blank'); 
   };
 
   return (
