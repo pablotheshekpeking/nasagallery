@@ -1,38 +1,92 @@
+/* nav */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 20px;
+  background-color: #B51D37;
+  color: white;
+  border-radius: 20px;
+  position: fixed;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.title {
+  margin: 0;
+}
+
+/* Body */
+
 .App {
   text-align: center;
+  padding: 20px;
+  background-image: url('../public/space.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
+  padding-top: 120px;
+  margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+input {
+  padding: 20px;
+  width: 70%;
+  margin-right: 10px;
+  border: 1px solid #0a3d91;
+  border-radius: 20px;
+}
+
+button {
+  padding: 20px;
   color: white;
+  width: 25%;
+  border: none;
+  border-radius: 20px;
+  background-color: #0a3d91;
 }
 
-.App-link {
-  color: #61dafb;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image-card {
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.image-card img:hover {
+  cursor: pointer;
+}
+
+.nasasvg{
+  display: flex;
+  position: fixed;
+  gap: 10px;
+  right: 20px;
+  top: 20px;
+}
+
+.nasasvg img{
+  width: 30px;
+  height: auto;
 }
