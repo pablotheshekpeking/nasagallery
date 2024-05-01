@@ -1,5 +1,3 @@
-// App.js
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import axios from 'axios';
@@ -11,13 +9,13 @@ const API_KEY = 'tmbtWjmsukDyG3I7AvpcIeFfyg0hxnXK3XdjOs2A';
 function App() {
   const [images, setImages] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showingResultsFor, setShowingResultsFor] = useState('');
 
   useEffect(() => {
     fetchImages();
   }, []);
 
   const fetchImages = async () => {
-    console.log(API_KEY)
     try {
       const response = await axios.get(
         `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&count=30`
@@ -34,11 +32,21 @@ function App() {
       const response = await axios.get(
         `https://images-api.nasa.gov/search?q=${searchQuery}`
       );
-      setImages(response.data.collection.items);
+  
+      // Extract image data from the response
+      const imageData = response.data.collection.items.map((item) => ({
+        url: item.links[0].href, 
+        title: item.data[0].title, 
+        explanation: item.data[0].description 
+      }));
+      
+      setImages(imageData);
+      setShowingResultsFor(searchQuery);
     } catch (error) {
       console.error('Error searching images: ', error);
     }
   };
+  
 
   return (
     <div className="App">
@@ -58,6 +66,7 @@ function App() {
         />
         <button type="submit">Search</button>
       </form>
+      {showingResultsFor && <div><h6 style={{color: 'white'}}>Now showing results for: {showingResultsFor}</h6></div>}
       <Gallery images={images} />
     </div>
   );
