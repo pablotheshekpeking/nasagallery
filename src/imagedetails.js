@@ -45,7 +45,7 @@ const ImageDetail = () => {
   } 
 
   return (
-    <div className="detailimg" style={{ height: '100vh' }}>
+    <div className="detailimg">
       <h2>{imageData.title}</h2>
       <img src={imageData.url} alt={imageData.title} />
       <p>{imageData.explanation}</p>
