@@ -47,6 +47,7 @@ input {
 }
 
 button {
+  padding: 0px;
   text-align: center;
   font-size: 20px;
   color: white;
