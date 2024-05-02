@@ -86,7 +86,7 @@ function Home() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-          <button type="submit"><CiSearch /></button>
+          <button type="submit"><CiSearch className='searchicon' /></button>
         </form>
         {showingResultsFor && <div><h6 style={{color: 'white'}}>Now showing results for: {showingResultsFor}</h6></div>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
