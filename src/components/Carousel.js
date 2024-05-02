@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import '../App.css'; // Import CSS file for styling
+import '../App.css';
 
 const API_KEY = process.env.REACT_APP_NASA_API_KEY;
 function NasaCarousel() {
