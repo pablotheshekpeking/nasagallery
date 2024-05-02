@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import Gallery from './components/Gallery';
 import Navbar from './components/Navbar';
+import NasaCarousel from './components/Carousel';
 
 const API_KEY = 'tmbtWjmsukDyG3I7AvpcIeFfyg0hxnXK3XdjOs2A';
 
@@ -57,6 +58,7 @@ function App() {
           <img src='/solar.svg' alt='solar' />
       </div>
       <Navbar />
+      <NasaCarousel />
       <form onSubmit={handleSearch}>
         <input
           type="text"

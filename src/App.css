@@ -33,7 +33,6 @@
 }
 
 form {
-  padding-top: 120px;
   margin-bottom: 20px;
   display: flex;
 }
@@ -53,6 +52,10 @@ button {
   border: none;
   border-radius: 20px;
   background-color: #0a3d91;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .gallery {
@@ -89,4 +92,21 @@ button {
 .nasasvg img{
   width: 30px;
   height: auto;
+}
+
+.carousel {
+  padding-top: 120px;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 100%;
+  transition: transform 1s ease; /* Smooth transition between slides */
+}
+
+.active {
+  opacity: 1; /* Ensure active slide is visible */
 }
