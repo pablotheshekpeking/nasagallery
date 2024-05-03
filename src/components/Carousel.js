@@ -42,7 +42,7 @@ function NasaCarousel() {
             transform: `translateX(-${currentIndex * 100}%)` // Adjust for the sliding effect
           }}
         >
-          <img src={image.url} alt={image.title} width={'200px'} height={'200px'} style={{border: '1px solid white', borderRadius: '20px'}} />
+          <img className='skeleton' src={image.url} alt={image.title} width={'200px'} height={'200px'} style={{border: '1px solid white', borderRadius: '20px'}} />
           <p style={{color: 'white'}}>{image.title}</p>
         </div>
       ))}

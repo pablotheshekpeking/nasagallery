@@ -9,7 +9,7 @@ const Gallery = ({ images }) => {
         {images.map((image, index) => (
           <div key={index} className="image-card">
             <Link target="_blank" to={`/details/${image.date}`}>
-              <img src={image.url} alt={image.title} />
+              <img className='skeleton' src={image.url} alt={image.title} />
             </Link>
           </div>
         ))}

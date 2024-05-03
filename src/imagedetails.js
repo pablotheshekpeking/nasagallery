@@ -37,7 +37,7 @@ const ImageDetail = () => {
   }, [date]);
 
   if (loading) {
-    return <p style={{ paddingTop: '300px' }}>Loading...</p>;
+    return <p style={{ color:'white', paddingTop: '300px' }}>Loading...</p>;
   }
 
   if (error) {
