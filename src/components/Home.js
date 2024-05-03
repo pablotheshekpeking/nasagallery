@@ -39,16 +39,16 @@ function Home() {
       const response = await axios.get(
         `https://images-api.nasa.gov/search?q=${searchQuery}`
       );
-  
+
       if (response.data.collection.items.length === 0) {
         setError('No images found for the search query');
       } else {
         const imageData = response.data.collection.items.map((item) => ({
-          url: item.links[0].href, 
-          title: item.data[0].title, 
-          explanation: item.data[0].description 
+          url: item.links[0].href,
+          title: item.data[0].title,
+          explanation: item.data[0].description
         }));
-        
+
         setImages(imageData);
         setShowingResultsFor(searchQuery);
         setError('');
@@ -77,27 +77,36 @@ function Home() {
   };
 
   return (
-      <div className="App">
-        <NasaCarousel />
-        <form onSubmit={handleSearch}>
-          <input
-            type="text"
-            placeholder="Search images..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button type="submit"><CiSearch className='searchicon' /></button>
-        </form>
-        {showingResultsFor && <div><h6 style={{color: 'white'}}>Now showing results for: {showingResultsFor}</h6></div>}
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        <Gallery images={images} />
-        {loading && <p style={{color: 'white'}}>Loading...</p>}
-        {!loading && (
-          <button className='showmore' onClick={handleLoadMore} disabled={loading}>
-            Show More...
-          </button>
-        )}
-      </div>
+    <div className="App">
+      <NasaCarousel />
+      <form onSubmit={handleSearch}>
+        <input
+          type="text"
+          placeholder="Search images..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button type="submit"><CiSearch className='searchicon' /></button>
+      </form>
+      {loading ? (
+        <p style={{ color: 'white' }}>Loading...</p>
+      ) : (
+        showingResultsFor && (
+          <div>
+            <h6 style={{ color: 'white' }}>Now showing results for: {showingResultsFor}</h6>
+          </div>
+        )
+      )}
+
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <Gallery images={images} />
+      {loading && <p style={{ color: 'white' }}>Loading...</p>}
+      {!loading && (
+        <button className='showmore' onClick={handleLoadMore} disabled={loading}>
+          Show More...
+        </button>
+      )}
+    </div>
   );
 }
 
