@@ -30,6 +30,7 @@
   background-image: url('../public/space.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 form {

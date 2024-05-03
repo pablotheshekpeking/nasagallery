@@ -41,7 +41,7 @@ const ImageDetail = () => {
   }
 
   if (error) {
-    return <p style={{ color: 'red' }}>{error}</p>;
+    return <p style={{ color: 'red', paddingTop: '300px' }}>{error}</p>;
   } 
 
   return (

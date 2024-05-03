@@ -4,7 +4,7 @@ import '../App.css';
 
 const API_KEY = process.env.REACT_APP_NASA_API_KEY;
 function NasaCarousel() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState([1]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {

@@ -8,7 +8,7 @@ import { CiSearch } from "react-icons/ci";
 const API_KEY = process.env.REACT_APP_NASA_API_KEY;
 
 function Home() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState([1]);
   const [searchQuery, setSearchQuery] = useState('');
   const [showingResultsFor, setShowingResultsFor] = useState('');
   const [loading, setLoading] = useState(false);
