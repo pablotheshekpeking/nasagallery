@@ -100,7 +100,7 @@ function Home() {
       )}
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      <Gallery images={images} />
+      {!error && <Gallery images={images} />}
       {loading && <ClipLoader color="#36d7b7" />}
       {!loading && (
         <button className='showmore' onClick={handleLoadMore} disabled={loading}>
