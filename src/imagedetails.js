@@ -42,14 +42,14 @@ const ImageDetail = () => {
   }
 
   if (error) {
-    return <p style={{ color: 'red', paddingTop: '300px', backgroundColor: 'black', padding: '20px' }}>{error}</p>;
+    return <div style={{paddingTop: '300px'}}><p style={{ color: 'red', backgroundColor: 'black', padding: '20px', borderRadius: '20px' }}>{error}</p></div>;
   } 
 
   return (
     <div className="detailimg">
       <h2>{imageData.title}</h2>
       <img src={imageData.url} alt={imageData.title} />
-      <p style={{ backgroundColor: 'black', padding: '20px' }}>{imageData.explanation}</p>
+      <p style={{ backgroundColor: 'black', padding: '20px', borderRadius: '20px' }}>{imageData.explanation}</p>
     </div>
   );
 };
