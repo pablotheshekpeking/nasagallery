@@ -49,7 +49,7 @@ const ImageDetail = () => {
     <div className="detailimg">
       <h2>{imageData.title}</h2>
       <img src={imageData.url} alt={imageData.title} />
-      <p>{imageData.explanation}</p>
+      <p style={{ backgroundColor: 'black', padding: '20px' }}>{imageData.explanation}</p>
     </div>
   );
 };
