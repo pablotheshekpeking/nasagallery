@@ -99,7 +99,7 @@ function Home() {
         )
       )}
 
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {error && <p style={{ color: 'red', backgroundColor: 'black', padding: '20px' }}>Sorry your search query doesnt match any images in our gallery</p>}
       {!error && <Gallery images={images} />}
       {loading && <ClipLoader color="#36d7b7" />}
       {!loading && (
