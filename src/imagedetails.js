@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
+import { ClipLoader } from 'react-spinners';
 
 const API_BASE_URL = 'https://api.nasa.gov/planetary/apod';
 
@@ -37,7 +38,7 @@ const ImageDetail = () => {
   }, [date]);
 
   if (loading) {
-    return <p style={{ color:'white', paddingTop: '300px' }}>Loading...</p>;
+    return <div style={{paddingTop: '300px'}}><ClipLoader color="#36d7b7" /></div>;
   }
 
   if (error) {

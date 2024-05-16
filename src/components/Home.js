@@ -4,6 +4,7 @@ import axios from 'axios';
 import Gallery from './Gallery';
 import NasaCarousel from './Carousel'
 import { CiSearch } from "react-icons/ci";
+import { ClipLoader } from 'react-spinners';
 
 const API_KEY = process.env.REACT_APP_NASA_API_KEY;
 
@@ -89,7 +90,7 @@ function Home() {
         <button type="submit"><CiSearch className='searchicon' /></button>
       </form>
       {loading ? (
-        <p style={{ color: 'white' }}>Loading...</p>
+        (<ClipLoader color="#36d7b7" />)
       ) : (
         showingResultsFor && (
           <div>
@@ -100,7 +101,7 @@ function Home() {
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <Gallery images={images} />
-      {loading && <p style={{ color: 'white' }}>Loading...</p>}
+      {loading && <ClipLoader color="#36d7b7" />}
       {!loading && (
         <button className='showmore' onClick={handleLoadMore} disabled={loading}>
           Show More...
